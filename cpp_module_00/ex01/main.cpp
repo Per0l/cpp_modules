@@ -7,7 +7,7 @@ int main() {
 	PhoneBook	pb;
 	std::string	cmd;
 
-	std::string test[] = {"a", "b", "c", "d", "e"};
+	std::string test[] = {"aaaaaaa", "bbbbbbbbbbbbbbbbbbbbb", "ccccccc", "ddddddd", "eeeeeee"};
 	pb.add(test);
 	pb.add(test);
 	pb.add(test);
@@ -17,13 +17,15 @@ int main() {
 	pb.add(test);
 	pb.add(test);
 	do {
+		std::cout << "Command> ";
 		std::getline(std::cin, cmd);
+		std::cout << std::endl;
 		if (cmd.compare("SEARCH") == 0)
 			pb.SEARCH();
 		else if (cmd.compare("ADD") == 0)
 			pb.ADD();
-		else
-			std::cout << "Available actions: EXIT SEARCH ADD" << std::endl;
+		else if (cmd.compare("EXIT") != 0)
+			std::cout << "Available actions: EXIT SEARCH ADD" << std::endl << std::endl;
 	} while (cmd.compare("EXIT") != 0);
 	return 0;
 }

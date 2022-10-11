@@ -13,16 +13,21 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 # include "Contact.hpp"
+# include <sstream>
+# include <iomanip>
+# define SSTR( x ) dynamic_cast< std::ostringstream & >( \
+            ( std::ostringstream() << std::dec << x ) ).str()
 
 class PhoneBook
 {
 private:
-	Contact contacts[8];
-	int		idx;
+	Contact 	contacts[8];
+	std::string	fields[5];
+	int			idx;
 public:
-	void	add(std::string[]);
-	void	ADD();
-	void	SEARCH();
+	void		add(std::string[]);
+	void		ADD();
+	void		SEARCH();
 	PhoneBook();
 };
 

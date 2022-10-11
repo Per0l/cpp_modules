@@ -18,8 +18,8 @@
 class Contact
 {
 private:
-	std::string data[5];
-	int			idx;
+	std::string 	data[5];
+	int				idx;
 public:
 	void			set_data(std::string[], int);
 	std::string		*get_data();

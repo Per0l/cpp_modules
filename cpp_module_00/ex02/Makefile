@@ -1,17 +1,20 @@
-SRCS		=	megaphone.cpp
+SRCS		=	tests.cpp Account.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
-NAME		=	megaphone
+NAME		=	tests
 
 CC			=	c++
 
-WFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic
+
+%.o: %.cpp
+				$(CC) $(CFLAGS) $< -c -o ${<:.cpp=.o}
 
 all:			${NAME}
 
 ${NAME}:		${OBJS}
-				${CC} ${WFLAGS} ${OBJS} -o ${NAME}
+				${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 			
 clean:
 				rm -f ${OBJS} 

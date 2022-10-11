@@ -2,7 +2,7 @@ SRCS		=	main.cpp Contact.cpp PhoneBook.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
-NAME		=	test
+NAME		=	phonebook
 
 CC			=	c++
 
