@@ -3,19 +3,21 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
 
+
+	/* std::string test[] = {"aaaaaaa", "bbbbbbbbbbbbbbbbbbbbb", "ccccccc", "ddddddd", "eeeeeee"};
+	pb.add(test);
+	pb.add(test);
+	pb.add(test);
+	pb.add(test);
+	pb.add(test);
+	pb.add(test);
+	pb.add(test);
+	pb.add(test); */
+
 int main() {
 	PhoneBook	pb;
 	std::string	cmd;
 
-	std::string test[] = {"aaaaaaa", "bbbbbbbbbbbbbbbbbbbbb", "ccccccc", "ddddddd", "eeeeeee"};
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
 	do {
 		std::cout << "Command> ";
 		std::getline(std::cin, cmd);
