@@ -6,14 +6,13 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:43:32 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/10/13 15:53:39 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/10/17 02:41:56 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
-{
+int	main(void) {
 	Zombie	*z = newZombie("Alex");
 	z->announce();
 	randomChump("Bruno");

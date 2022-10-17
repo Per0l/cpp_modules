@@ -6,13 +6,12 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:43:37 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/10/13 15:49:35 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/10/17 02:41:59 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name )
-{
+Zombie* newZombie( std::string name ) {
 	return (new Zombie(name));
 }

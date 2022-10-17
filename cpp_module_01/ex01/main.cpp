@@ -6,14 +6,13 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:43:32 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/10/13 16:08:37 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/10/17 02:42:18 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
-{
+int	main(void) {
 	int	size;
 
 	size = 20;
