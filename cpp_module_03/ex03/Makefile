@@ -2,7 +2,7 @@ SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
-NAME		=	claptrap
+NAME		=	ex03
 
 CC			=	c++
 

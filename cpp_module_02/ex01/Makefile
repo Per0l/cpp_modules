@@ -2,7 +2,7 @@ SRCS		=	main.cpp Fixed.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
-NAME		=	a.out
+NAME		=	ex01
 
 CC			=	c++
 

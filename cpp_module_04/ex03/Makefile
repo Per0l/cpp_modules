@@ -2,7 +2,7 @@ SRCS		=	AMateria.cpp Character.cpp MateriaSource.cpp Ice.cpp Cure.cpp main.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
-NAME		=	animals
+NAME		=	ex03
 
 CC			=	c++
 
