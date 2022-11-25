@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:51:02 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 00:11:10 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:06:27 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ protected:
     static unsigned int const _init_damage;
 public:
     FragTrap(std::string name);
+    FragTrap(FragTrap const &copy);
     ~FragTrap();
+
+    FragTrap &operator=(FragTrap const &copy);
 
     void attack(std::string const &target);
 

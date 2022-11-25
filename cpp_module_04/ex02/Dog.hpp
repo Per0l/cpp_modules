@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:25:25 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 14:52:02 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:21:46 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ private:
 public:
     Dog();
     Dog(Dog const &copy);
-    Dog &operator=(Dog const &other);
     virtual ~Dog();
 
-    Brain* getBrain() const;
+    Dog &operator=(Dog const &other);
 
+    Brain* getBrain() const;
+    
     void makeSound() const;
 };
 

@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:32:42 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 00:14:05 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:04:57 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,22 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 	this->setDamage(this->_init_damage);
 }
 
+ScavTrap::ScavTrap(ScavTrap const &copy): ClapTrap(copy.getName()) {
+	this->setHitpoints(copy.getHitpoints());
+	this->setEnergy(copy.getEnergy());
+	this->setDamage(copy.getDamage());
+}
+
 ScavTrap::~ScavTrap() {
 	std::cout << YELLOW "<ScavTrap> " RESET << UNDERLINE + this->getName() + RESET << RED " destructor" RESET << " called" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &copy) {
+	this->setName(copy.getName());
+	this->setHitpoints(copy.getHitpoints());
+	this->setEnergy(copy.getEnergy());
+	this->setDamage(copy.getDamage());
+	return *this;
 }
 
 void ScavTrap::attack(std::string const &target) {

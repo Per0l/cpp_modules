@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:45:11 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/12 21:09:24 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:28:17 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,15 @@ AMateria::AMateria(std::string const & type): _type(type) {
 	std::cout << "AMateria constructor called" << std::endl;
 }
 
+AMateria::AMateria(AMateria const &copy): _type(copy._type) {}
+
 AMateria::~AMateria() {
 	std::cout << "AMateria destructor called" << std::endl;
+}
+
+AMateria &AMateria::operator=(AMateria const &copy) {
+	this->_type = copy._type;
+	return *this;
 }
 
 std::string const & AMateria::getType() const {

@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:25:18 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 19:47:30 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:19:32 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ private:
 public:
     Cat();
     Cat(Cat const &copy);
-    Cat &operator=(Cat const &other);
     virtual ~Cat();
+
+    Cat &operator=(Cat const &other);
     
     Brain* getBrain() const;
 

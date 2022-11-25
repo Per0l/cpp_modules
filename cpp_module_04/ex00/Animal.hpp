@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:24:01 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 00:54:24 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:10:29 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ protected:
     std::string type;
 public:
     Animal();
+    Animal(Animal const &copy);
     virtual ~Animal();
+
+    Animal &operator=(Animal const &copy);
 
     std::string getType() const;
     void setType(std::string type);

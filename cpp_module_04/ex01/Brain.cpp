@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 01:05:32 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 20:23:34 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:19:25 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Brain::Brain() {
 	}
 }
 
-Brain::~Brain() {
-	std::cout << MAGENTA "<Brain> " RESET << RED "destructor" RESET << " called" << std::endl;
-}
-
 Brain::Brain(Brain const &copy) {
 	std::cout << MAGENTA "<Brain> " RESET << GREEN "copy constructor" RESET << " called" << std::endl;
 	for (int i = 0; i < 100; ++i)
 		this->ideas[i] = copy.getIdea(i);
+}
+
+Brain::~Brain() {
+	std::cout << MAGENTA "<Brain> " RESET << RED "destructor" RESET << " called" << std::endl;
 }
 
 Brain &Brain::operator=(Brain const &other) {

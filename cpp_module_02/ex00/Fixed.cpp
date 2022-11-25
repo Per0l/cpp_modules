@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:02:20 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/10/25 17:57:48 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 13:57:46 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ Fixed::~Fixed() {
 
 Fixed::Fixed(const Fixed &copy): _value(copy._value) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = copy;
 }
 
 Fixed &Fixed::operator=(const Fixed &copy) {

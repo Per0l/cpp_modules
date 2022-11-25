@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:41:44 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 00:14:44 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:00:14 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,18 @@ ClapTrap::ClapTrap(std::string name): _name(name), _hitpoints(10), _energy(10), 
 	std::cout << GRAY "<ClapTrap> " RESET << UNDERLINE + this->getName() + RESET << GREEN " constructor" RESET << " called" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap const &copy): _name(copy._name), _hitpoints(copy._hitpoints), _energy(copy._energy), _damage(copy._damage) {}
+
 ClapTrap::~ClapTrap() {
 	std::cout << GRAY "<ClapTrap> " RESET << UNDERLINE + this->getName() + RESET << RED " destructor" RESET << " called" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &copy) {
+	this->_name = copy._name;
+	this->_hitpoints = copy._hitpoints;
+	this->_energy = copy._energy;
+	this->_damage = copy._damage;
+	return *this;
 }
 
 std::string ClapTrap::getName() const {

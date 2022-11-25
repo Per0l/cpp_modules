@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:57:25 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 00:57:26 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:17:29 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ private:
 
 public:
     WrongCat();
+    WrongCat(WrongCat const &copy);
     virtual ~WrongCat();
+
+    WrongCat &operator=(WrongCat const &copy);
 
     void makeSound() const;
 };

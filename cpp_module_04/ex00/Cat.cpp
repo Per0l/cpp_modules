@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:25:13 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 02:07:14 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:16:16 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@ Cat::Cat() {
 	this->setType("Cat");
 }
 
+Cat::Cat(Cat const &copy): Animal(copy) {}
+
 Cat::~Cat() {
 	std::cout << BBLUE "<Cat> " RESET << RED "destructor" RESET << " called" << std::endl;
+}
+
+Cat &Cat::operator=(Cat const &copy) {
+	this->type = copy.type;
+	return *this;
 }
 
 void Cat::makeSound() const {

@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:32:39 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/06 00:13:35 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:05:09 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ protected:
     static unsigned int const _init_damage;
 public:
     ScavTrap(std::string name);
+    ScavTrap(ScavTrap const &copy);
     ~ScavTrap();
+
+    ScavTrap &operator=(ScavTrap const &copy);
 
     void attack(std::string const &target);
 

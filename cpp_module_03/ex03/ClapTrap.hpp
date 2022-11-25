@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:41:47 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/04 22:24:31 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:00:44 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ private:
     unsigned int _damage;
 public:
     ClapTrap(std::string name);
+    ClapTrap(ClapTrap const &copy);
     ~ClapTrap();
+
+    ClapTrap &operator=(ClapTrap const &copy);
 
     virtual std::string getName() const;
     unsigned int getHitpoints() const;
