@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/27 16:22:27 by aperol-h          #+#    #+#             */
+/*   Updated: 2022/11/27 16:24:46 by aperol-h         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
+#include <iomanip>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -84,6 +97,21 @@ void Account::displayStatus( void ) const {
 	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
-void Account::_displayTimestamp( void ) {
-	std::cout << "[19920104_091532] ";
+static std::ostream& field(std::ostream& o) {
+    return o << std::setfill('0') << std::setw(2);
 }
+
+void Account::_displayTimestamp( void ) {
+	time_t ntime = time(NULL);
+    struct tm *ltime = localtime(&ntime);
+    std::cout << '[';
+	std::cout << field << ltime->tm_year + 1900;
+	std::cout << field << ltime->tm_mon;
+	std::cout << field << ltime-> tm_mday;
+	std::cout << "_";
+    std::cout << field << ltime->tm_hour;
+	std::cout << field << ltime->tm_min;
+	std::cout << field << ltime->tm_sec;
+	std::cout << "] ";
+}
+//diff <(cut -b18- t) <(cut -b18- 19920104_091532.log)

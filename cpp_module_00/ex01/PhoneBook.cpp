@@ -33,6 +33,10 @@ void PhoneBook::ADD() {
 	for (int i = 0; i < 5; i++) {
 		std::cout << this->fields[i] << ": ";
 		std::getline(std::cin, data[i]);
+		if (data[i].empty()) {
+			std::cout << "Error: Contact can't have empty fields." << std::endl;
+			return;
+		}
 	}
 	std::cout << std::endl;
 	this->add(data);
@@ -64,7 +68,7 @@ void PhoneBook::SEARCH() {
 	std::cout << std::endl;
 	std::istringstream tmp( line );
 	tmp >> inp;
-	if (tmp && inp >= 0 && inp <= 8) {
+	if (tmp && inp >= 0 && inp <= 8 && this->contacts[inp].exists()) {
 		std::string	*data = this->contacts[inp].get_data();
 		for (int i = 0; i < 5; i++)
 			std::cout << this->fields[i] << ": " << data[i] << std::endl;
