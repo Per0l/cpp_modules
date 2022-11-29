@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:24:52 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/10/17 02:48:02 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:54:01 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	main(int argc, char *argv[]) {
 	
 	if (infile.is_open() and outfile.is_open()) {
 		while ( infile ) {
+			if (infile.tellg() == -1)
+				break;
 			if (infile.tellg() > 0)
 				outfile << std::endl;
 			std::getline(infile, line);
@@ -47,12 +49,14 @@ int	main(int argc, char *argv[]) {
 			std::size_t idx = -1;
 			while ((idx = line.find(s1, last_i)) != std::string::npos) {
 				outfile << line.substr(last_i, idx-last_i) << s2;
-				last_i = idx + s1.length()-1;
+				last_i = idx + s1.length();
 			}
-			if (last_i == 0)
+			if (last_i == 0) {
 				outfile << line;
-			else
+			}
+			else {
 				outfile << line.substr(last_i, line.length()-last_i);
+			}
 		}
 	} else 
 		return (1);

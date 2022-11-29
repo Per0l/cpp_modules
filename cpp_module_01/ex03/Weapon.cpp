@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:49:01 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/10/17 02:45:50 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:57:48 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Weapon::~Weapon() {
 
 }
 
-const std::string &Weapon::getType() {
+const std::string &Weapon::getType() const {
 	return (this->_type);
 }
 

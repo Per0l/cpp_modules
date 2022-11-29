@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 03:48:26 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/10/17 02:45:44 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:58:38 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
     HumanB(std::string name);
     ~HumanB();
     void setWeapon(Weapon &weapon);
-    void attack();
+    void attack() const;
 };
 
 #endif
