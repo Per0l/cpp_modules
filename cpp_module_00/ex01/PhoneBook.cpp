@@ -26,6 +26,18 @@ void PhoneBook::add(std::string data[]) {
 	this->idx = (this->idx + 1) % 8;
 }
 
+void PhoneBook::trim(std::string& str) {
+	std::string spaces = " \t\n\v\f\r";
+	for (size_t i = 0; i < spaces.length(); i++) {
+		str.erase(str.find_last_not_of(spaces[i])+1);
+		str.erase(0, str.find_first_not_of(spaces[i]));
+	}
+	for (size_t i = 0; i < str.length(); i++) {
+		if (str[i] == '\t')
+			str.replace(i, i, " ");
+	}
+}
+
 void PhoneBook::ADD() {
 	std::string	data[5];
 	std::string	line;
@@ -33,6 +45,7 @@ void PhoneBook::ADD() {
 	for (int i = 0; i < 5; i++) {
 		std::cout << this->fields[i] << ": ";
 		std::getline(std::cin, data[i]);
+		trim(data[i]);
 		if (data[i].empty()) {
 			std::cout << "Error: Contact can't have empty fields.\n" << std::endl;
 			return;

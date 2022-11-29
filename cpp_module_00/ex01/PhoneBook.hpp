@@ -26,6 +26,7 @@ private:
 public:
 	void		ADD();
 	void		SEARCH();
+	void 		trim(std::string& str);
 	PhoneBook();
 };
 

@@ -15,12 +15,6 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
 
-static inline void trim(std::string& str) {
-    str.erase(str.find_last_not_of(' ')+1);
-    str.erase(0, str.find_first_not_of(' '));
-}
-
-
 int main() {
 	PhoneBook	pb;
 	std::string	cmd;
@@ -28,7 +22,7 @@ int main() {
 	do {
 		std::cout << "Command> ";
 		std::getline(std::cin, cmd);
-		trim(cmd);
+		pb.trim(cmd);
 		std::cout << std::endl;
 		if (cmd.compare("SEARCH") == 0)
 			pb.SEARCH();
