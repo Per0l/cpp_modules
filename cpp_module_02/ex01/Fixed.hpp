@@ -22,15 +22,16 @@ private:
     static const int    _bits;
 public:
     Fixed();
-    Fixed(Fixed const &copy);
-    Fixed(int const value);
-    Fixed(float const value);
+    Fixed(const Fixed &copy);
+
+    Fixed(const int value);
+    Fixed(const float value);
     ~Fixed();
 
-    Fixed &operator=(Fixed const &copy);
+    Fixed &operator=(const Fixed &copy);
 
     int getRawBits(void) const;
-	void setRawBits(int const raw);
+	void setRawBits(const int raw);
 
     float toFloat(void) const;
 	int toInt(void) const;
