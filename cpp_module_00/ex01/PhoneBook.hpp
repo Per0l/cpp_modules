@@ -15,8 +15,6 @@
 # include "Contact.hpp"
 # include <sstream>
 # include <iomanip>
-# define SSTR( x ) dynamic_cast< std::ostringstream & >( \
-            ( std::ostringstream() << std::dec << x ) ).str()
 
 class PhoneBook
 {
@@ -24,8 +22,8 @@ private:
 	Contact 	contacts[8];
 	std::string	fields[5];
 	int			idx;
-public:
 	void		add(std::string[]);
+public:
 	void		ADD();
 	void		SEARCH();
 	PhoneBook();

@@ -1,18 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/29 16:25:40 by aperol-h          #+#    #+#             */
+/*   Updated: 2022/11/29 16:25:40 by aperol-h         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <cstring>
 #include <iomanip>
 #include "PhoneBook.hpp"
 
+static inline void trim(std::string& str) {
+    str.erase(str.find_last_not_of(' ')+1);
+    str.erase(0, str.find_first_not_of(' '));
+}
 
-	/* std::string test[] = {"aaaaaaa", "bbbbbbbbbbbbbbbbbbbbb", "ccccccc", "ddddddd", "eeeeeee"};
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test);
-	pb.add(test); */
 
 int main() {
 	PhoneBook	pb;
@@ -21,6 +28,7 @@ int main() {
 	do {
 		std::cout << "Command> ";
 		std::getline(std::cin, cmd);
+		trim(cmd);
 		std::cout << std::endl;
 		if (cmd.compare("SEARCH") == 0)
 			pb.SEARCH();
