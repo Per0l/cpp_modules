@@ -6,7 +6,7 @@ NAME		=	ex03
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic
 
 %.o: %.cpp
 				$(CC) $(CFLAGS) $< -c -o ${<:.cpp=.o}
