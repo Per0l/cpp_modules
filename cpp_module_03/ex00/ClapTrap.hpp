@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:41:47 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 13:54:24 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:53:22 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ private:
     unsigned int _energy;
     unsigned int _damage;
 public:
+    ClapTrap();
     ClapTrap(std::string name);
     ClapTrap(ClapTrap const &copy);
     ~ClapTrap();
 
     ClapTrap &operator=(ClapTrap const &copy);
 
-    virtual std::string getName() const;
+    std::string getName() const;
     unsigned int getHitpoints() const;
     unsigned int getEnergy() const;
     unsigned int getDamage() const;
@@ -49,7 +50,7 @@ public:
     void setEnergy(unsigned int amount);
     void setDamage(unsigned int amount);
 
-    virtual void attack(std::string const &target);
+    void attack(std::string const &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };

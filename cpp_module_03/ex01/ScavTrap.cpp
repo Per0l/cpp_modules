@@ -6,21 +6,24 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:32:42 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:04:02 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:22:16 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-unsigned int const ScavTrap::_init_hitpoints = 100;
-unsigned int const ScavTrap::_init_energy = 50;
-unsigned int const ScavTrap::_init_damage = 20;
+ScavTrap::ScavTrap() {
+	std::cout << YELLOW "<ScavTrap> " GREEN "default constructor" RESET << " called" << std::endl;
+	this->_hitpoints = 100;
+	this->_energy = 50;
+	this->_damage = 20;
+}
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 	std::cout << YELLOW "<ScavTrap> " RESET << UNDERLINE + this->getName() + RESET << GREEN " constructor" RESET << " called" << std::endl;
-	this->setHitpoints(this->_init_hitpoints);
-	this->setEnergy(this->_init_energy);
-	this->setDamage(this->_init_damage);
+	this->_hitpoints = 100;
+	this->_energy = 50;
+	this->_damage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &copy): ClapTrap(copy.getName()) {

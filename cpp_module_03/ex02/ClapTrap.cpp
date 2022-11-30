@@ -6,11 +6,15 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:41:44 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:00:21 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:22:16 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(): _name("(null)"), _hitpoints(10), _energy(10), _damage(0) {
+	std::cout << GRAY "<ClapTrap> " GREEN "default constructor" RESET << " called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitpoints(10), _energy(10), _damage(0) {
 	std::cout << GRAY "<ClapTrap> " RESET << UNDERLINE + this->getName() + RESET << GREEN " constructor" RESET << " called" << std::endl;

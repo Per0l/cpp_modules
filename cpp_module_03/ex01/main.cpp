@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:41:54 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/01 21:14:49 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:25:01 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int main(void) {
 	std::cout << BBLUE "\n\t---\t\tScavTrap tests\t\t---\n" RESET << std::endl;
 
 	handleAttack(s1, s2);
-	s1.setDamage(200);
 	s2.beRepaired(20);
 	std::cout << s2 << std::endl;
 	s2.guardGate();
