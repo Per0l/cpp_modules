@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:23:57 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:12:21 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:21:03 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,4 @@ std::string Animal::getType() const {
 
 void Animal::setType(std::string type) {
 	this->type = type;
-}
-
-void Animal::makeSound() const {
-	std::cout << "(Default Animal::makeSound)" << std::endl;
 }

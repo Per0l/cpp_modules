@@ -6,25 +6,24 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:50:13 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/12 21:07:25 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:47:48 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string name): _name(name), _inventory() {
-	std::cout << "Character constructor called" << std::endl;
-}
+Character::Character(): _name("(null)"), _inventory() {}
 
-Character::Character(Character const &copy) {
-	this->_name = copy._name;
+Character::Character(std::string name): _name(name), _inventory() {}
+
+Character::Character(Character const &copy): _name(copy._name), _inventory() {
 	for (int i = 0; i < 4; i++) {
-		this->_inventory[i] = copy._inventory[i]->clone();
+		if (copy._inventory[i])
+			this->_inventory[i] = copy._inventory[i]->clone();
 	}
 }
 
 Character::~Character() {
-	std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->_inventory[i])
 			delete this->_inventory[i];
@@ -37,6 +36,7 @@ Character const	&Character::operator=(Character const &copy) {
 		for (int i = 0; i < 4; i++) {
 			if (this->_inventory[i])
 				delete this->_inventory[i];
+			this->_inventory[i] = NULL;
 			if (copy._inventory[i])
 				this->_inventory[i] = copy._inventory[i]->clone();
 		}
@@ -63,6 +63,8 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
+	if (idx < 0 || idx > 3)
+		return;
 	if (this->_inventory[idx])
 		this->_inventory[idx]->use(target);
 }

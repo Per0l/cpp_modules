@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:45:14 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:27:30 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:58:09 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ public:
     AMateria(AMateria const &copy);
     virtual ~AMateria();
 
-    AMateria &operator=(AMateria const &copy);
-
-    std::string const & getType() const; //Returns the materia type
+    std::string const & getType() const;
 
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);

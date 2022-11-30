@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:24:01 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:12:45 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:20:58 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Animal
 {
 protected:
     std::string type;
+public:
     Animal();
     Animal(Animal const &copy);
-public:
     virtual ~Animal();
 
     Animal &operator=(Animal const &copy);
@@ -31,7 +31,7 @@ public:
     void setType(std::string type);
     virtual Brain* getBrain() const = 0;
 
-    virtual void makeSound() const;
+    virtual void makeSound() const = 0;
 };
 
 #endif

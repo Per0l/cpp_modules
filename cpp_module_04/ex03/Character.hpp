@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:50:16 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/12 20:40:00 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:42:14 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ private:
     std::string _name;
     AMateria *_inventory[4];
 public:
+    Character();
     Character(std::string name);
     Character(Character const &copy);
     ~Character();

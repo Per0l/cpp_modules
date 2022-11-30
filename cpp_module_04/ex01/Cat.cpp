@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:25:13 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:23:59 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:57:00 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ Cat::Cat(Cat const &copy): Animal(copy), brain(new Brain(*copy.brain)) {
 
 Cat::~Cat() {
 	std::cout << BBLUE "<Cat> " RESET << RED "destructor" RESET << " called" << std::endl;
-	delete this->brain;
+	if (this->brain)
+		delete this->brain;
 }
 
 Cat &Cat::operator=(Cat const &other) {
 	if (this != &other) {
-		delete this->brain;
+		if (this->brain)
+			delete this->brain;
 		this->brain = new Brain(*other.brain);
 		this->Animal::operator=(other);
 	}

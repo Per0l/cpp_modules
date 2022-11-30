@@ -6,22 +6,20 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:17:46 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:29:38 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:43:31 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure(): AMateria("cure") {
-	std::cout << "Cure constructor called" << std::endl;
-}
+Cure::Cure(): AMateria("cure") {}
 
 Cure::Cure(Cure const &copy): AMateria(copy) {}
 
 Cure::~Cure() {}
 
 Cure &Cure::operator=(Cure const &copy) {
-	this->_type = copy._type;
+	(void)copy;
 	return *this;
 }
 
@@ -30,5 +28,5 @@ AMateria* Cure::clone() const {
 }
 
 void Cure::use(ICharacter& target) {
-	std::cout << "* shoots an ice bolt at "<< target.getName() << " *" << std::endl;
+	std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
 }
