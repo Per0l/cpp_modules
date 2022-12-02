@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 19:27:58 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/18 15:34:23 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/02 21:04:09 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,8 @@ int main() {
 	b.signForm(*pf);
 	b.executeForm(*pf);
 	someRandomIntern.makeForm("42 form", "");
+
+	delete f;
+	delete rf;
+	delete pf;
 }

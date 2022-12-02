@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:22:30 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/18 15:18:06 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/02 21:00:51 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Intern
 {
 private:
     static std::string const names[];
+    template <class T>
+    Form* createForm(std::string const &target);
 public:
     Intern();
     Intern(Intern const &copy);
@@ -30,8 +32,6 @@ public:
 
     Form* makeForm(std::string form, std::string target);
     
-    template <class T>
-    Form* createForm(std::string const &target);
 };
 
 #endif
