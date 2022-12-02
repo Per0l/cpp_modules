@@ -6,13 +6,13 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:57:37 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:13:26 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:15:54 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() {
+WrongAnimal::WrongAnimal(): type("WrongAnimal") {
 	std::cout << GRAY "<WrongAnimal> " RESET << GREEN "constructor" RESET << " called" << std::endl;
 }
 

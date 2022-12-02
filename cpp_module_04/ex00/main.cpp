@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:23:15 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/30 20:13:42 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:17:36 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main() {
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+	std::cout << meta->getType() << std::endl;
 
 	const WrongAnimal* wmeta = new WrongAnimal();
 	const WrongAnimal* wc = new WrongCat();
@@ -33,7 +34,8 @@ int main() {
 	wc->makeSound();
 	static_cast<const WrongCat*>(wc)->makeSound();
 	wmeta->makeSound();
-
+	std::cout << wmeta->getType() << std::endl;
+	
 	delete meta;
 	delete j;
 	delete i;

@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 01:05:32 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:20:40 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:24:44 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,8 @@ Brain &Brain::operator=(Brain const &other) {
 
 std::string Brain::getIdea(int index) const {
 	return this->ideas[index];
+}
+
+void Brain::setIdea(int index, std::string idea) {
+	this->ideas[index] = idea;
 }

@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:25:22 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:25:10 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:56:49 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ Dog::Dog(Dog const &copy): Animal(copy), brain(new Brain(*copy.brain)) {
 
 Dog::~Dog() {
 	std::cout << BCYAN "<Dog> " RESET << RED "destructor" RESET << " called" << std::endl;
-	delete this->brain;
+	if (this->brain)
+		delete this->brain;
 }
 
 Dog &Dog::operator=(Dog const &other) {
 	if (this != &other) {
-		delete this->brain;
+		if (this->brain)
+			delete this->brain;
 		this->brain = new Brain(*other.brain);
 		this->Animal::operator=(other);
 	}

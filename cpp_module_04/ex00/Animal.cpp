@@ -6,13 +6,13 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:23:57 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/25 14:11:25 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:14:44 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() {
+Animal::Animal(): type("Animal") {
 	std::cout << GRAY "<Animal> " RESET << GREEN "constructor" RESET << " called" << std::endl;
 }
 

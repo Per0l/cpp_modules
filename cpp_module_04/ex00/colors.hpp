@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   colors.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 00:57:25 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/12/02 18:15:44 by aperol-h         ###   ########.fr       */
+/*   Created: 2022/11/06 01:09:45 by aperol-h          #+#    #+#             */
+/*   Updated: 2022/11/30 20:18:32 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
-# include "WrongAnimal.hpp"
+#ifndef COLORS_HPP
+# define COLORS_HPP
 
-class WrongCat: public WrongAnimal
-{
-public:
-    WrongCat();
-    WrongCat(WrongCat const &copy);
-    virtual ~WrongCat();
-
-    WrongCat &operator=(WrongCat const &copy);
-
-    void makeSound() const;
-};
+# define RESET "\033[0m"
+# define GRAY "\x1B[90m"
+# define RED "\x1B[31m"
+# define GREEN "\x1B[32m"
+# define YELLOW "\x1B[33m"
+# define MAGENTA "\x1B[35m"
+# define CYAN "\x1B[36m"
+# define BBLUE "\x1B[94m"
+# define BCYAN "\x1B[96m"
+# define UNDERLINE "\x1B[4m"
+# define BG_BLACK "\x1B[40m"
 
 #endif
