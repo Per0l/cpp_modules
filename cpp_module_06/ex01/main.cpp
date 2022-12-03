@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 13:26:56 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/22 13:47:26 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/03 15:45:47 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main() {
 
 	std::cout << "Original data address:\t\t" << data << "\t(i: " << data->i << ", f: " << data->f << ")" << std::endl;
 	uintptr_t sdata = serialize(data);
-	std::cout << "Serialized data address:\t" << sdata << std::endl;
+	std::cout << "Serialized data value:\t\t" << sdata << std::endl;
 	Data *udata = deserialize(sdata);
 	std::cout << "De-Serialized data address:\t" << udata << "\t(i: " << udata->i << ", f: " << udata->f << ")" << std::endl;
 }

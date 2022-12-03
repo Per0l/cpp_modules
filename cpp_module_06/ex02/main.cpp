@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 13:54:05 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/22 14:35:36 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:01:13 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ void identify(Base* p) {
 
 void identify(Base& p) {
 	try {
-		dynamic_cast<A&>(p);
+		A c = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
 	}
 	catch(const std::exception& e){}
 	try {
-		dynamic_cast<B&>(p);
+		B c = dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
 	}
 	catch(const std::exception& e){}
 	try {
-		dynamic_cast<C&>(p);
+		C c = dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
 	}
 	catch(const std::exception& e){}
