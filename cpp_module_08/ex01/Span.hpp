@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:32:05 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/24 18:02:51 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/19 22:56:37 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
     std::vector<int> _vec;
     unsigned int _n;
 public:
+    Span();
     Span(unsigned int n);
     Span(Span const &copy);
     ~Span();

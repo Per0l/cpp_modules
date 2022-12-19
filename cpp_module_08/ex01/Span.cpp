@@ -6,11 +6,13 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:32:01 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/24 17:09:31 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/19 22:56:44 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+Span::Span(): _n(0) {}
 
 Span::Span(unsigned int n): _n(n) {}
 
