@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:29:47 by aperol-h          #+#    #+#             */
-/*   Updated: 2022/11/23 14:13:49 by aperol-h         ###   ########.fr       */
+/*   Updated: 2022/12/19 21:59:43 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,13 @@ public:
         public: const char *what() const throw() {return "Index out of bounds";};
     };
 
-    T& operator[](unsigned int idx) {
+    T &operator[](unsigned int idx) {
+        if (idx >= _n || this->_array == NULL)
+            throw ArrayIndexOutOfBoundsException();
+        return this->_array[idx];
+    };
+
+    T const &operator[](unsigned int idx) const {
         if (idx >= _n || this->_array == NULL)
             throw ArrayIndexOutOfBoundsException();
         return this->_array[idx];
