@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:30:55 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/18 20:23:46 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/18 20:47:53 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ public:
     
     void loadData(std::string database);
     float getPriceAt(std::time_t atTime) const;
-    bool isDateValid(std::tm date) const;
 };
 
 #endif
