@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:31:49 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/18 23:45:52 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 01:39:27 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,11 @@ int main(int argc, char*argv[])
 
 	PmergeMe pme;
 	pme.vectorSort(expr);
-	std::cout << pme.last_vector_time.count();
+	std::cerr << "vector: " << pme.time_elpased.count() << "\n";
+	pme.printVector();
+	std::cout << "|";
+	pme.dequeSort(expr);
+	std::cerr << "deque: " << pme.time_elpased.count() << "\n";
+	pme.printDeque();
+
 }
