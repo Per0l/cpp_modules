@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:32:17 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/18 22:45:32 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:03:56 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ RPN const &RPN::operator=(RPN const &copy) {
 	return *this;
 }
 
-long RPN::evaluate(std::string expr)
-{
+long RPN::evaluate(std::string expr) {
 	if (expr.find_first_not_of("0123456789+-/* \t\n\v\f\r") != std::string::npos)
 		throw SyntaxErrorException();
 	std::string digit;

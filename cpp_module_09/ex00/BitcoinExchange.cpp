@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:31:03 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/19 02:52:46 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:04:18 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ BitcoinExchange const &BitcoinExchange::operator=(BitcoinExchange const &copy) {
 	return *this;
 }
 
-float BitcoinExchange::getPriceAt(std::time_t atTime) const
-{
+float BitcoinExchange::getPriceAt(std::time_t atTime) const {
 	std::map<std::time_t, float>::const_iterator it = _data.lower_bound(atTime);
 	if (it == _data.end())
 		it = std::prev(it);
@@ -62,5 +61,3 @@ float BitcoinExchange::getPriceAt(std::time_t atTime) const
 const char *BitcoinExchange::FileErrorException::what() const throw() {
 	return "Error: could not open file.";
 }
-
-

@@ -6,14 +6,14 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:31:10 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/19 02:54:09 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:03:25 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "BitcoinExchange.hpp"
 
-std::time_t extractDate(const std::string& s){
+std::time_t extractDate(const std::string& s) {
     std::istringstream is(s);
 	int y, m, d;
     char delimiter;
@@ -40,8 +40,7 @@ std::time_t extractDate(const std::string& s){
     return -1;
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 	if (argc != 2) {
 		std::cerr << "Usage: " << argv[0] << " input.txt" << std::endl;
 		return 1;
