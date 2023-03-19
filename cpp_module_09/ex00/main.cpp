@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:31:10 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/19 03:03:25 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:21:29 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
 		data.open(argv[1]);
 		if (!data.is_open())
 			throw BitcoinExchange::FileErrorException();
-		be.loadData("../data.csv");
+		be.loadData("./data.csv");
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
