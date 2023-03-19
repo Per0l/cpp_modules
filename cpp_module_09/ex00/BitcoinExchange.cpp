@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:31:03 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/18 20:48:04 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 02:52:46 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,13 @@ void BitcoinExchange::loadData(std::string datafile) {
 	data.close();
 }
 
-BitcoinExchange::BitcoinExchange() {
-	
-	// Get an iterator pointing to the first element in the map
-	std::map<std::time_t, float>::iterator it = _data.begin();
-	
-	// Iterate through the map and print the elements
-	while (it != _data.end()) {
-		std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
-		++it;
-	}
-}
+BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &copy) {
 	*this = copy;
 }
 
-BitcoinExchange::~BitcoinExchange() {
-
-}
+BitcoinExchange::~BitcoinExchange() {}
 
 BitcoinExchange const &BitcoinExchange::operator=(BitcoinExchange const &copy) {
 	this->_data = copy._data;

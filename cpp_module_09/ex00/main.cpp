@@ -6,10 +6,11 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:31:10 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/18 20:46:41 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 02:54:09 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "BitcoinExchange.hpp"
 
 std::time_t extractDate(const std::string& s){

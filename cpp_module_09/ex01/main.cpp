@@ -6,12 +6,12 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:31:34 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/18 22:47:03 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 02:54:49 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
 #include <iostream>
+#include "RPN.hpp"
 
 int main(int argc, char*argv[])
 {

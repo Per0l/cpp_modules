@@ -6,20 +6,15 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:30:55 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/18 20:47:53 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 02:53:58 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
-# include <string>
 # include <fstream>
 # include <sstream>
-# include <string>
-# include <iostream>
-# include <algorithm>
 # include <map>
-# include <cmath>
 
 class BitcoinExchange
 {
