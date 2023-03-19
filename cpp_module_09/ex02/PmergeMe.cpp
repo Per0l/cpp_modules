@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:32:25 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/19 01:55:04 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 02:46:50 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,29 @@ PmergeMe const &PmergeMe::operator=(PmergeMe const &copy) {
 	return *this;
 }
 
+const char *PmergeMe::NegativeNumberErrorException::what() const throw() {
+	return "Error: negative number.";
+}
+
+const char *PmergeMe::InvalidArgumentErrorException::what() const throw() {
+	return "Error: invalid argument.";
+}
+
 template <typename T>
 void	PmergeMe::_parse(T &c, std::string input) {
 	std::istringstream ss(input);
 	for (std::string line; std::getline(ss, line, ' '); ) {
-		if (line.length() > 0)
-	        c.push_back(std::stoi(line));
+		if (line.length() > 0) {
+			try {
+				int n = std::stoi(line);
+				if (n < 0)
+					throw NegativeNumberErrorException();
+				c.push_back(n);
+  			}
+			catch (const std::invalid_argument& ia) {
+				throw InvalidArgumentErrorException();
+			}
+		}
 	}
 }
 
@@ -43,17 +60,20 @@ void    PmergeMe::_dequeParse(std::string input) {
 }
 
 template <typename T>
-void PmergeMe::_printContainer(T begin, T end) {
-	for (T it = begin; it < end; it++)
+size_t PmergeMe::_printContainer(T &c) {
+	size_t size = 0;
+	for (typename T::iterator it = c.begin(); it < c.end(); it++, size++)
 		std::cout << *it << " ";
+	std::cout << std::endl;
+	return (size);
 }
 
 void PmergeMe::printVector() {
-	this->_printContainer(_v.begin(), _v.end());
+	this->_printContainer(_v);
 }
 
 void PmergeMe::printDeque() {
-	this->_printContainer(_d.begin(), _d.end());
+	this->_printContainer(_d);
 }
 
 template <typename T>
@@ -63,40 +83,36 @@ void PmergeMe::_insertionSort(T &c) {
 }
 
 template <typename T>
-void mergeSort(T &c) {
-    if (c.end() - c.begin() > 13) {
-        typename T::iterator mid = (c.begin() + c.end()) / 2;
+void PmergeMe::_mergeSort(T &c) {
+	const int size = c.size();
+    if (size > 13) {
+        typename T::iterator mid = c.begin() + size / 2;
 		T left(c.begin(), mid);
 		T right(mid, c.end());
-        mergeSort(left);
-        mergeSort(right);
-        int RIDX = 0;
-		int LIDX = 0;
-		for (int i = c.begin(); i < c.end() - c.begin() + 1; i++) {
-			if (RIDX == right.end()) {
-				c[i] = left[LIDX];
-				LIDX++;
-			} else if (LIDX == left.end()) {
-				c[i] = right[RIDX];
-				RIDX++;
-			} else if (right[RIDX] > left[LIDX]) {
-				c[i] = left[LIDX];
-				LIDX++;
-			} else {
-				c[i] = right[RIDX];
-				RIDX++;
-			}
+        _mergeSort(left);
+        _mergeSort(right);
+        typename T::iterator RIDX = right.begin();
+		typename T::iterator LIDX = left.begin();
+		for (typename T::iterator i = c.begin(); i < c.end(); i++) {
+			if (RIDX == right.end())
+				*i = *LIDX++;
+			else if (LIDX == left.end())
+				*i = *RIDX++;
+			else if (*RIDX > *LIDX)
+				*i = *LIDX++;
+			else
+				*i = *RIDX++;
 		}
-    } else {
-        _insertionSort(c);
+		return;
     }
+    _insertionSort(c);
 }
 
 template <typename T>
 void PmergeMe::_sort(T &c, std::string input) {
 	std::chrono::steady_clock::time_point start = std::chrono::high_resolution_clock::now();
 	this->_parse(c, input);
-	this->_insertionSort(c);
+	this->_mergeSort(c);
 	std::chrono::steady_clock::time_point stop = std::chrono::high_resolution_clock::now();
 	time_elpased = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
 }
