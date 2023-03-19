@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:32:25 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/19 03:05:04 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:15:40 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ const char *PmergeMe::InvalidArgumentErrorException::what() const throw() {
 	return "Error: invalid argument.";
 }
 
+const char *PmergeMe::EmptyErrorException::what() const throw() {
+	return "Error: empty input.";
+}
+
 template <typename T>
 void	PmergeMe::_parse(T &c, std::string input) {
 	std::istringstream ss(input);
@@ -50,13 +54,8 @@ void	PmergeMe::_parse(T &c, std::string input) {
 			}
 		}
 	}
-}
-
-void    PmergeMe::_vectorParse(std::string input) {
-	_parse(_v, input);
-}
-void    PmergeMe::_dequeParse(std::string input) {
-	_parse(_d, input);
+	if (c.size() <= 0)
+		throw EmptyErrorException();
 }
 
 template <typename T>

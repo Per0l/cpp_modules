@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:32:28 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/19 03:05:18 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:13:01 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class PmergeMe
 private:
     std::vector<int> _v;
     std::deque<int>  _d;
-    void    _vectorParse(std::string input);
-    void    _dequeParse(std::string input);
     
     template <typename T>
     void    _insertionSort(T &c);
@@ -46,6 +44,10 @@ public:
     };
 
     class InvalidArgumentErrorException: public std::exception {
+        public: const char *what() const throw();
+    };
+
+    class EmptyErrorException: public std::exception {
         public: const char *what() const throw();
     };
 
