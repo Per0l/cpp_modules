@@ -6,7 +6,7 @@
 /*   By: aperol-h <aperol-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:32:28 by aperol-h          #+#    #+#             */
-/*   Updated: 2023/03/19 02:59:09 by aperol-h         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:02:04 by aperol-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,6 @@ public:
 
     template <typename T>
     void	_parse(T &c, std::string input);
-
-    template <typename T>
-    void swap(T &a, T &b) {
-        T tmp;
-        tmp = a;
-        a = b;
-        b = tmp;
-    }
 
     std::chrono::microseconds time_elpased;
 };
